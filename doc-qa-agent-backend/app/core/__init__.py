@@ -1,0 +1,1 @@
+"""Cross-cutting infrastructure concerns: config, logging, exceptions."""

@@ -1,0 +1,38 @@
+# ===== App metadata =====
+APP_NAME=doc-qa-agent
+APP_VERSION=0.1.0
+ENVIRONMENT=development
+DEBUG=false
+
+# ===== API / server =====
+API_HOST=0.0.0.0
+API_PORT=8000
+CORS_ALLOW_ORIGINS=["*"]
+
+# ===== Logging =====
+LOG_LEVEL=INFO
+LOG_JSON=true
+
+# ===== Google Gemini =====
+# Get a key at https://aistudio.google.com/apikey
+GOOGLE_API_KEY=your-google-ai-studio-api-key-here
+CHAT_MODEL_NAME=gemini-2.5-flash
+EMBEDDING_MODEL_NAME=models/gemini-embedding-001
+LLM_TEMPERATURE=0.2
+
+# ===== Web search tool (Tavily) =====
+TAVILY_API_KEY=tvly-your-tavily-api-key-here
+
+# ===== Retrieval =====
+DATA_DIR=data
+SOURCE_DOCUMENT_PATH=data/sample_document.pdf
+VECTOR_STORE_DIR=vector_db
+CHUNK_SIZE=1000
+CHUNK_OVERLAP=150
+RETRIEVAL_TOP_K=4
+RETRIEVAL_SCORE_THRESHOLD=0.25
+
+# ===== Memory =====
+# One of: memory | sqlite
+CHECKPOINTER_BACKEND=memory
+SQLITE_CHECKPOINT_PATH=vector_db/checkpoints.sqlite

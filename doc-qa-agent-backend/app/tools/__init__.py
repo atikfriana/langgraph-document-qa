@@ -1,0 +1,1 @@
+"""Agent tool implementations. Exactly one tool is exposed, per the challenge spec."""

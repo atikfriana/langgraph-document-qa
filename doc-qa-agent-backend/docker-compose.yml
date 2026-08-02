@@ -1,0 +1,39 @@
+services:
+  doc-qa-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: doc-qa-agent:latest
+    container_name: doc-qa-agent
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - vector_db_data:/app/vector_db
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0) if urllib.request.urlopen('http://localhost:8000/health').status == 200 else sys.exit(1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  ingest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: doc-qa-agent:latest
+    container_name: doc-qa-agent-ingest
+    env_file:
+      - .env
+    volumes:
+      - vector_db_data:/app/vector_db
+      - ./data:/app/data:ro
+    entrypoint: ["python", "scripts/run_ingest.py"]
+    profiles:
+      - ingest
+
+volumes:
+  vector_db_data:

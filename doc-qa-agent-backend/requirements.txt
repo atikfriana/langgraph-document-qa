@@ -1,0 +1,52 @@
+# --- Web framework ---
+fastapi>=0.115.6,<0.116.0
+uvicorn[standard]==0.34.0
+pydantic>=2.10.4,<3.0.0
+pydantic-settings>=2.10.1,<3.0.0
+
+# --- LangChain / LangGraph ---
+# Migrated to the LangChain 1.x / LangGraph 1.x generation (both reached
+# their 1.0 milestone with a "no breaking changes until 2.0" commitment, and
+# LangGraph 1.0 explicitly preserves full backward compatibility for the
+# StateGraph/add_messages/checkpointer APIs this project uses -- so this is
+# a version bump, not a rewrite of app/graph/*).
+langchain>=1.3.11,<2.0.0
+langchain-core>=1.5.3,<2.0.0
+langchain-text-splitters>=1.1.2,<2.0.0
+langchain-tavily>=0.2.18,<0.3.0
+
+# langchain-community is now sunset/archived upstream (frozen at the 0.4.x
+# line; no new integrations or features will land in it going forward). It
+# is kept here ONLY for FAISS + the PDF/text/markdown document loaders,
+# which have no first-party replacement package yet. Treat this as a
+# legacy compatibility shim, not an actively-developed dependency -- see
+# the migration note in the PR/README for the follow-up recommendation
+# (e.g. a dedicated vector-store package) once one exists upstream.
+langchain-community>=0.4.2,<0.5.0
+
+# Google Gemini provider integration. THIS is the package that was the
+# actual root cause of the "Function call is missing a thought_signature"
+# 400 error: langchain-google-genai 2.1.x (the previously pinned line) was
+# released before Gemini 3 existed and never learns to capture/replay the
+# `thought_signature` Gemini 3 attaches to every function-call part. 4.x is
+# required both for that fix and because it moved to the consolidated
+# `google-genai` SDK (the legacy `google-ai-generativelanguage` SDK is what
+# 2.1.x used, and that transport does not carry the signature field at all).
+langchain-google-genai>=4.3.2,<5.0.0
+
+langgraph>=1.2.10,<2.0.0
+langgraph-checkpoint>=4.0.3,<5.0.0
+langgraph-checkpoint-sqlite>=3.1.0,<4.0.0
+
+# --- Retrieval / vector store ---
+faiss-cpu==1.9.0.post1
+pypdf==5.1.0
+unstructured[md]==0.16.11
+
+# --- Utilities ---
+python-dotenv==1.0.1
+httpx>=0.28.1
+
+# --- Testing (dev) ---
+pytest==8.3.4
+pytest-asyncio==0.25.2

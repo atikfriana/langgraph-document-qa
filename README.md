@@ -225,19 +225,19 @@ http://localhost:3000
 ## Implementation
 ## ✨ Features & Previews
 ### 🏠 App Dashboard
-![App Dashboard](docs/app-dashboard.png)
+![App Dashboard](doc-qa-agent-backend/docs/app-dashboard.png)
 
 ### 💬 Detailed QA & Summarization
-![Detailed Answer](docs/qa-detailed-answer.png)
+![Detailed Answer](doc-qa-agent-backend/docs/qa-detailed-answer.png)
 
 ### 🔍 Source Citations
-![Response Sources](docs/qa-response-sources.png)
+![Response Sources](doc-qa-agent-backend/docs/qa-response-sources.png)
 
 ### ⚙️ Frontend & Backend Architecture
-![Frontend Backend Integration](docs/frontend-backend-integration.png)
+![Frontend Backend Integration](doc-qa-agent-backend/docs/frontend-backend-integration.png)
 
 ### 📖 API Documentation
-![Backend API Endpoints](docs/backend-api-endpoints.png)
+![Backend API Endpoints](doc-qa-agent-backend/docs/backend-api-endpoints.png)
 
 ---
 

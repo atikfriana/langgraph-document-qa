@@ -222,15 +222,22 @@ http://localhost:3000
 
 ---
 
-## Screenshots
+## Implementation
+## ✨ Features & Previews
+### 🏠 App Dashboard
+![App Dashboard](docs/app-dashboard.png)
 
-Screenshots will be added after deployment.
+### 💬 Detailed QA & Summarization
+![Detailed Answer](docs/qa-detailed-answer.png)
 
-```
-docs/images/chat.png
-docs/images/web-search.png
-docs/images/mobile.png
-```
+### 🔍 Source Citations
+![Response Sources](docs/qa-response-sources.png)
+
+### ⚙️ Frontend & Backend Architecture
+![Frontend Backend Integration](docs/frontend-backend-integration.png)
+
+### 📖 API Documentation
+![Backend API Endpoints](docs/backend-api-endpoints.png)
 
 ---
 
